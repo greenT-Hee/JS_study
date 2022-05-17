@@ -6,7 +6,6 @@
 https://www.notion.so/JS-100-Study-1aea6ea8cc184c568e33add8cd0d266b
 
 <br>
-<br>
 
 # JS_MemorizeFunction
 자바스크립트 기초 단계에서 함수에 익숙해지기 위해
