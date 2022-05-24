@@ -22,7 +22,7 @@ https://www.notion.so/JS-100-Study-1aea6ea8cc184c568e33add8cd0d266b
 
 <br> 
 
-암기한 내용은 github와 notion로 관리하고 있습니다.
 
-#### JS 함수 외우기 스터디 노션 URL
+#### 운영 및 관리
+암기한 내용은 github와 notion로 관리하고 있습니다. 그리고 매일 암기한 코드는 화면을 녹화하여 디스코드로 공유합니다.
 https://www.notion.so/f776796efe434a6fbdbbd0d931a602c9
