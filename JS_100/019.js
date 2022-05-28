@@ -10,4 +10,5 @@ console.log(pow(2,8));
 const n = prompt('수를 입력하세요.').split(' ');
 //split을 사용하면 배열로 만들어지기 때문에 인덱스로 뽑아낸다. 
 console.log(Math.pow(parseInt(n[0], 10), parseInt(n[1], 10)));
-//parseInt(값, 10진수)
+//parseInt(값, 10진수); 
+
