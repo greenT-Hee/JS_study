@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM을 이용한 퀴즈 판독기</title>
+</head>
+<body>
+    <p>김태희가 태어난 연도는?</p>
+    <input type="text" id="answer"/>
+    <button id="send-answer" type="submit">제출</button>
+
+    <script>
+        // 1. 유저가 답을 맞추면 alert('성공')
+        // 2. 유저가 답을 3번 찍어서 못맞추면 alert('멍청아')
+        // 3. 2번까지는 틀렸으면('다시 도전')
+        
+        const btn = document.querySelector('#send-answer');
+        let count = 0;
+
+        btn.addEventListener('click', () => {
+            count++;
+            const answer = document.querySelector('#answer').value;
+
+            if(answer == 1997){
+                alert('정답')
+            }else if(answer != 1997 && count < 3){
+                alert('다시 도전!')
+            }else if(answer != 1997 && count >= 3){
+                alert('멍청아!')
+            }
+        })
+    </script>
+
+</body>
+</html>
