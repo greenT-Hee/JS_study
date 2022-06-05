@@ -9,7 +9,7 @@
 
 
 // 내 답안 ()
-const n = prompt('키를 나열하세요').split(' ');
+const n = prompt('키를 나열하세요').split(' ')
 
 // 오름차순 정렬하기
 let k = n.sort(function height(a,b){
@@ -18,7 +18,7 @@ let k = n.sort(function height(a,b){
 
 
 function result(){
-    if(n == k){
+    if(n === k){
         console.log('YES');
     }else{
         console.log('NO');
@@ -29,3 +29,27 @@ result();
 
 
 // 본단압
+const unsorted = prompt('키를 입력하세요');
+let sorted = "";
+
+sorted = unsorted
+  .split(" ")
+  .sort(function(a, b) {
+    return a - b;
+  })
+  .join(" ");
+
+if (unsorted === sorted) {
+  console.log("Yes");
+} else {
+  console.log("No");
+}
+
+// 내가 실수한 부분
+// .join(' ')을 하지 않았기 때문이다. 
+// split까지 하면 배열로 정리되는 반면에 promt 값으로 받아 오는 값은 공백으로 띄어진 string이다. 
+
+// 정리하자면 
+// 1. promt로 받아온 값을 split으로 배열을 만든 후, 
+// 2. sort 함수로 베열을 정렬하고
+// 3. join으로 공백으로 이어진 하나의 string을 만들어서 조건문으로 완성
