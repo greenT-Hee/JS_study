@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트로 시계 만들기</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script
+        src="https://unpkg.com/react@17/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        function Clock(props){
+            const date = new Date();
+            return(
+                <div>
+                    <h1>리액트로 타이머 만들기</h1>
+                    <h2>{date.toLocaleTimeString()}</h2>
+                </div>
+            );
+        }
+
+        const root = document.querySelector("#root")
+        setInterval(()=>{
+            ReactDOM.render(
+                <React.StrictMode>
+                    <Clock />
+                </React.StrictMode>, 
+                root
+            )
+        },1000)
+    </script>
+
+</body>
+</html>
