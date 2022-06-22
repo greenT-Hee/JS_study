@@ -4,12 +4,12 @@ function func(n) {
     for(let i = 2; i < n; i++){
         if(n % i === 0){
             console.log("NO");
-            return false;
+            return ;
         }
     }
     if(n === 1){
         console.log("NO");
-        return false;
+        return ;
     }
     console.log("YES");
 
