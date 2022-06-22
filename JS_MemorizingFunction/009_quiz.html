@@ -17,16 +17,16 @@
         // 3. 2번까지는 틀렸으면('다시 도전')
         
         const btn = document.querySelector('#send-answer');
+        
         let count = 0;
-
         btn.addEventListener('click', () => {
-            count++;
             const answer = document.querySelector('#answer').value;
 
+            count++;
             if(answer == 1997){
                 alert('정답')
             }else if(answer != 1997 && count < 3){
-                alert('다시 도전!')
+                alert('다시 도전!');
             }else if(answer != 1997 && count >= 3){
                 alert('멍청아!')
             }
