@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // https://codingapple1.github.io/hello.txt
+
+        const f = fetch('https://codingapple1.github.io/hello.txt222');
+        f.then(res => {
+            return res.text();
+        })
+        .then(data => {
+            document.write(data);
+        })
+        .catch(e=>{
+            throw console.error("사이트 참조 실패 404");
+        })
+    </script>
+</body>
+</html>
