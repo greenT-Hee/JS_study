@@ -52,8 +52,9 @@ heights("155 156 165 166 169 176");
 // <pass>에 코드를 작성하여 two함수를 완성하세요.
 
 function one(n){
-  console.log(n)
-  function two(){
+  function two(m){
+    const sq = Math.pow(m,n);
+    return sq
   }
   return two;
 }
@@ -62,6 +63,61 @@ const a = one(2);
 const b = one(3);
 const c = one(4);
 
+console.log(a) // a 자체가 two 함수
+
 console.log(a(10));
 console.log(b(10));
 console.log(c(10));
+
+
+// 36번 
+// 1~9까지의 숫자 중 하나를 입력하면 그 단의 구구단 결과를 한 줄에 출력하는 프로그램
+// 입력 : 2
+// 출력 : 2 4 6 8 10 12 14 16 18
+
+const calculate = (n) => {
+  let answer = ''
+  for(let i = 1; i < 10; i++) {
+    answer += n * i + " ";
+  }
+  console.log(answer)
+}
+
+calculate(9);
+
+
+// 37번 반장선거 
+// 학생들이 뽑은 후보들을 입력받으면 뽑힌 학생의 이름과 받은 표 수를 출력하는 프로그램
+// 원범 원범 혜원 혜원 혜원 혜원 유진 유진
+// 혜원(이)가 총 4표로 반장이 되었습니다.
+// 반복문을 돌려서 앞의 값과 같으면 값을 누적, 다르면 반복문 끝나고 새 시작
+
+const n = prompt('투표해주세요 🗳️');
+const numArr = [];
+const nameArr = n.split(' ');
+const nameList = new Set(nameArr); // 원범 혜원 유진
+
+let num = 1;
+let votedName = ""
+
+for(let i = 0; i < nameArr.length; i++) {
+  if(nameArr[i + 1] === nameArr [i]) {
+    num++;
+  } else {
+    numArr.push(num);
+    num = 1;
+    
+  }
+}
+
+const MAX_VOTE = Math.max.apply(null, numArr);
+// votedName = nameList[numArr.indexOf(MAX_VOTE)]
+let 이름배열 = [];
+nameList.forEach((name) => {
+  console.log(name);
+  이름배열.push(name);
+  console.log(이름배열);
+  votedName = 이름배열[numArr.indexOf(MAX_VOTE)]
+})
+
+alert(`${votedName}(이)가 총 ${MAX_VOTE}표로 반장이 되었습니다.`);
