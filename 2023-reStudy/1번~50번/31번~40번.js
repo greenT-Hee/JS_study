@@ -92,32 +92,52 @@ calculate(9);
 // 혜원(이)가 총 4표로 반장이 되었습니다.
 // 반복문을 돌려서 앞의 값과 같으면 값을 누적, 다르면 반복문 끝나고 새 시작
 
-const n = prompt('투표해주세요 🗳️');
-const numArr = [];
-const nameArr = n.split(' ');
-const nameList = new Set(nameArr); // 원범 혜원 유진
+// const n = prompt('투표해주세요 🗳️');
+// const numArr = [];
+// const nameArr = n.split(' ');
+// const nameList = new Set(nameArr); // 원범 혜원 유진
 
-let num = 1;
-let votedName = ""
+// let num = 1;
+// let votedName = ""
 
-for(let i = 0; i < nameArr.length; i++) {
-  if(nameArr[i + 1] === nameArr [i]) {
-    num++;
-  } else {
-    numArr.push(num);
-    num = 1;
+// for(let i = 0; i < nameArr.length; i++) {
+//   if(nameArr[i + 1] === nameArr [i]) {
+//     num++;
+//   } else {
+//     numArr.push(num);
+//     num = 1;
     
+//   }
+// }
+
+// const MAX_VOTE = Math.max.apply(null, numArr);
+// // votedName = nameList[numArr.indexOf(MAX_VOTE)]
+// let 이름배열 = [];
+// nameList.forEach((name) => {
+//   console.log(name);
+//   이름배열.push(name);
+//   console.log(이름배열);
+//   votedName = 이름배열[numArr.indexOf(MAX_VOTE)]
+// })
+
+// alert(`${votedName}(이)가 총 ${MAX_VOTE}표로 반장이 되었습니다.`);
+
+// 40번 
+// 원범이와 친구들이 총 몇 명 탈 수 있는지 알 수 있는 프로그램을 작성해 주세요.
+// 첫번째 입력으로 제한 무게, 두번째 입력으로는 함께한 친구들의 수 n, 
+//그 다음 차례대로 탑승할 친구들의 몸무게, 그 다음 몸무게는 무작위
+// 한 번 타는 인원 수 제한은 없지만 제한 무게를 넘으면 무조건 다음 기구 타야 한다.
+let total = 0;
+let count = 0;
+const limit = 50;
+const n = 5;
+const weight = [20,20,20,20,20]
+
+for (let i=1; i<=n; i++){
+  total += weight[i];
+  if (total <= limit){
+		count = i;
   }
 }
 
-const MAX_VOTE = Math.max.apply(null, numArr);
-// votedName = nameList[numArr.indexOf(MAX_VOTE)]
-let 이름배열 = [];
-nameList.forEach((name) => {
-  console.log(name);
-  이름배열.push(name);
-  console.log(이름배열);
-  votedName = 이름배열[numArr.indexOf(MAX_VOTE)]
-})
-
-alert(`${votedName}(이)가 총 ${MAX_VOTE}표로 반장이 되었습니다.`);
+console.log(count);
