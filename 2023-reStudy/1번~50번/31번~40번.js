@@ -122,6 +122,7 @@ calculate(9);
 
 // alert(`${votedName}(이)가 총 ${MAX_VOTE}표로 반장이 되었습니다.`);
 
+<<<<<<< HEAD
 // 38번 
 // 학생들의 점수를 공백으로 구분하여 입력을 받고 사탕을 받을 학생의 수를 출력하세요.
 let scores = [97,86,75,66,55,97,85,97,97,95];
@@ -161,3 +162,24 @@ editWords('hqllo my namq is hyqwon');
 // 원범이와 친구들이 총 몇 명 탈 수 있는지 알 수 있는 프로그램을 작성해 주세요.
 // 차례 대로 몸무게... 
 const limit = 5;
+=======
+// 40번 
+// 원범이와 친구들이 총 몇 명 탈 수 있는지 알 수 있는 프로그램을 작성해 주세요.
+// 첫번째 입력으로 제한 무게, 두번째 입력으로는 함께한 친구들의 수 n, 
+//그 다음 차례대로 탑승할 친구들의 몸무게, 그 다음 몸무게는 무작위
+// 한 번 타는 인원 수 제한은 없지만 제한 무게를 넘으면 무조건 다음 기구 타야 한다.
+let total = 0;
+let count = 0;
+const limit = 50;
+const n = 5;
+const weight = [20,20,20,20,20]
+
+for (let i=1; i<=n; i++){
+  total += weight[i];
+  if (total <= limit){
+		count = i;
+  }
+}
+
+console.log(count);
+>>>>>>> 51dd7616b8b94e4dfaea8d79f829aa751ba087d2
