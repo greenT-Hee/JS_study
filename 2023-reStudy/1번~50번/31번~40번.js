@@ -88,36 +88,76 @@ calculate(9);
 
 // 37번 반장선거 
 // 학생들이 뽑은 후보들을 입력받으면 뽑힌 학생의 이름과 받은 표 수를 출력하는 프로그램
-// 원범 원범 혜원 혜원 혜원 혜원 유진 유진
+// 원범 원범 혜원 혜원 혜원 혜원 유진 유진 태희 태희 태희 태희 태희 태희
 // 혜원(이)가 총 4표로 반장이 되었습니다.
 // 반복문을 돌려서 앞의 값과 같으면 값을 누적, 다르면 반복문 끝나고 새 시작
 
-const n = prompt('투표해주세요 🗳️');
-const numArr = [];
-const nameArr = n.split(' ');
-const nameList = new Set(nameArr); // 원범 혜원 유진
+// const n = prompt('투표해주세요 🗳️');
+// const numArr = [];
+// const nameArr = n.split(' ');
+// const nameList = new Set(nameArr); // 원범 혜원 유진
 
-let num = 1;
-let votedName = ""
+// let num = 1;
+// let votedName = ""
 
-for(let i = 0; i < nameArr.length; i++) {
-  if(nameArr[i + 1] === nameArr [i]) {
-    num++;
-  } else {
-    numArr.push(num);
-    num = 1;
+// for(let i = 0; i < nameArr.length; i++) {
+//   if(nameArr[i + 1] === nameArr [i]) {
+//     num++;
+//   } else {
+//     numArr.push(num);
+//     num = 1;
     
-  }
+//   }
+// }
+
+// const MAX_VOTE = Math.max.apply(null, numArr);
+// // votedName = nameList[numArr.indexOf(MAX_VOTE)]
+// let 이름배열 = [];
+// nameList.forEach((name) => {
+//   console.log(name);
+//   이름배열.push(name);
+//   console.log(이름배열);
+//   votedName = 이름배열[numArr.indexOf(MAX_VOTE)]
+// })
+
+// alert(`${votedName}(이)가 총 ${MAX_VOTE}표로 반장이 되었습니다.`);
+
+// 38번 
+// 학생들의 점수를 공백으로 구분하여 입력을 받고 사탕을 받을 학생의 수를 출력하세요.
+let scores = [97,86,75,66,55,97,85,97,97,95];
+// 오름차순 함수
+// scores.sort(function(a,b) {
+//   return a - b;
+// })
+
+// 내림차순 함수
+let candyArr = [];
+
+scores.sort(function(a, b) {
+  return b - a;
+});
+
+for(let i = 0; i < scores.length; i++) {
+  candyArr.push(scores[i])
+
+  if(new Set(candyArr).size === 3) break;
 }
 
-const MAX_VOTE = Math.max.apply(null, numArr);
-// votedName = nameList[numArr.indexOf(MAX_VOTE)]
-let 이름배열 = [];
-nameList.forEach((name) => {
-  console.log(name);
-  이름배열.push(name);
-  console.log(이름배열);
-  votedName = 이름배열[numArr.indexOf(MAX_VOTE)]
-})
+console.log("캔디 갯수: ", candyArr.length);
 
-alert(`${votedName}(이)가 총 ${MAX_VOTE}표로 반장이 되었습니다.`);
+
+// 39번 
+// 문장이 입력되면 모든 q를 e로 바꾸는 프로그램을 작성해 주세요.
+// 입력 : hqllo my namq is hyqwon
+// 출력 : hello my name is hyewon
+
+function editWords (txt) {
+  console.log(txt.replaceAll(/q/g, 'e'));
+}
+editWords('hqllo my namq is hyqwon');
+
+
+// 40번 
+// 원범이와 친구들이 총 몇 명 탈 수 있는지 알 수 있는 프로그램을 작성해 주세요.
+// 차례 대로 몸무게... 
+const limit = 5;
